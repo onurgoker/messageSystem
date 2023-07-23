@@ -8,13 +8,11 @@ use App\User;
 class HomeController extends Controller
 {
     /**
-     * Show the profile for the given user.
-     *
-     * @param  int  $id
+     * Home page
      * @return View
      */
-    public function show($id)
+    public function index()
     {
-        return view('user.profile', ['user' => User::findOrFail($id)]);
+        return view('home');
     }
 }
