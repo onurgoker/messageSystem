@@ -16,5 +16,6 @@ use App\Http\Controllers\AccountController;
 |
 */
 Route::get('account', [AccountController::class, 'index'])->name('account');
+Route::get('login', [AccountController::class, 'login'])->name('login');
 Route::post('account', [AccountController::class, 'store'])->name('accountPost');
 Route::get('/', [HomeController::class, 'index'])->name('home');

@@ -30,4 +30,8 @@ class AccountController extends Controller
 
         return redirect()->back()->with('success','Registration completed');
     }
+
+    public function login() {
+        return view('account.login');
+    }
 }
