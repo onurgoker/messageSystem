@@ -1,9 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\CreateAccountController;
+use App\Http\Controllers\AccountController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +15,6 @@ use App\Http\Controllers\CreateAccountController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/account', [AccountController::class, 'index'])->name('account');
-Route::post('/account', [AccountController::class, 'store']);
-Route::get('/', [HomeController::class, 'index']);
+Route::get('account', [AccountController::class, 'index'])->name('account');
+Route::post('account', [AccountController::class, 'store'])->name('accountPost');
+Route::get('/', [HomeController::class, 'index'])->name('home');
