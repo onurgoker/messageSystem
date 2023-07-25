@@ -15,7 +15,8 @@ use App\Http\Controllers\AccountController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('account', [AccountController::class, 'index'])->name('account');
+Route::post('auth', [AccountController::class, 'auth'])->name('auth');
+Route::get('account', [AccountController::class, 'index'])->name('account')->middleware('auth');
 Route::get('login', [AccountController::class, 'login'])->name('login');
 Route::post('account', [AccountController::class, 'store'])->name('accountPost');
 Route::get('/', [HomeController::class, 'index'])->name('home');
