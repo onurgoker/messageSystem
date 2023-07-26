@@ -12,7 +12,7 @@ class AccountController extends Controller
 {
     public function index()
     {
-        $users = User::all();
+        $users = User::where('email', '!=', Auth::user()->email)->get();
 
         return view('account.index', ['users' => $users]);
     }
