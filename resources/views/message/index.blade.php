@@ -18,6 +18,7 @@
                 @endif
             </h2>
             <h1>Welcome, {{ Auth::user()->name }} ({{Auth::user()->email}})</h1>
+            <h3><a style="color:blue" href="/account">Write a new message</a></h3>
             <h3>My Messages</h3>
             <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                 <h4>Received Messages</h4>
@@ -34,24 +35,22 @@
                         <tr>
                             <td>#{{$message->id}}</td>
                             <td>{{$message->sender}}</td>
-                            <td><a href="/message/{{$message->id}}">{{substr($message->message, 0, 50) . '...'}}</a></td>
+                            <td><a style="color:blue" href="/message/{{$message->id}}">{{substr($message->message, 0, 50) . '...'}}</a></td>
                             <td>{{$message->created_at}}</td>
                         </tr>
                     @endforeach
                 </table>
             </div>            
-            <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+            <div class="grid grid-cols-2 gap-x-8 gap-y-6 sm:grid-cols-2">
                 <div>
                 <table class="mt-2.5">
                     <th>ID</th>
-                    <th>Sender</th>
                     <th>Message</th>
                     <th>Date</th>
                         @foreach ($sentMessages as $message)
                         <tr>
                             <td>#{{$message->id}}</td>
-                            <td>{{$message->sender}}</td>
-                            <td><a href="/message/{{$message->id}}">{{substr($message->message, 0, 50) . '...'}}</a></td>
+                            <td><a style="color:blue" href="/message/{{$message->id}}">{{substr($message->message, 0, 50) . '...'}}</a></td>
                             <td>{{$message->created_at}}</td>
                         </tr>
                     @endforeach
