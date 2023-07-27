@@ -65,6 +65,12 @@ Tailwind css (done)
 
 Dockerizing the project
 
+# Useful Sources
+https://laravel.com/
+
+https://tailwindcss.com/docs/guides/laravel
+
+
 # Author
 Onur GÖKER
 
