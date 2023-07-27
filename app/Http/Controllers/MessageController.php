@@ -12,14 +12,32 @@ class MessageController extends Controller
 {
     public function index()
     {
-        $messages = Message::where('email', '!=', Auth::user()->email)->get();
+        $receivedMessages = Message::where('receiver', '=', Auth::user()->email)->get();
+        $sentMessages = Message::where('sender', '=', Auth::user()->email)->get();
 
-        return view('message.index', ['messages' => $messages]);
+
+        return view('message.index', [
+            'receivedMessages' => $receivedMessages,
+            'sentMessages' => $sentMessages]);
     }
+
+    public function detail(Request $request)
+    {
+        $message = Message::where('id',$request->id)->first();
+
+        if($message->receiver != Auth::user()->email && $message->sender != Auth::user()->email) {
+            return redirect()->back()->with('error','You are not allowed to view this message');
+        }
+
+        return view('message.detail', [
+            'message' => $message]);
+    }
+
 
     public function store(Request $request)
     {
         try {
+            //TODO handle this
             // $request->validate([
                 // 'message' => ['required', 'string', 'max:255'],
             //     'sender' => ['required', 'string', 'email', 'max:255', 'unique:users'],

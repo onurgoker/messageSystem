@@ -17,9 +17,10 @@
                     {{ Session::get('message') }}
                 @endif
             </h2>
-            <h1>Welcome, {{ Auth::user()->name }}</h1>
+            <h1>Welcome, {{ Auth::user()->name }} ({{Auth::user()->email}})</h1>
             <h3>My Messages</h3>
 
+            <h4>Received Messages</h4>
             <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                 <div>
                 <table class="mt-2.5">
@@ -27,14 +28,33 @@
                     <th>Sender</th>
                     <th>Message</th>
                     <th>Date</th>
-                    <tr>
-                        @foreach ($messages as $message)
+                        @foreach ($receivedMessages as $message)
+                        <tr>
                             <td>#{{$message->id}}</td>
                             <td>{{$message->sender}}</td>
-                            <td>{{substr($message->message, 0, 50) . '...'}}</td>
+                            <td><a href="/message/{{$message->id}}">{{substr($message->message, 0, 50) . '...'}}</a></td>
                             <td>{{$message->created_at}}</td>
-                            @endforeach
-                    </tr>
+                        </tr>
+                    @endforeach
+                </table>
+            </div>            
+
+            <h4>Sent Messages</h4>
+            <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+                <div>
+                <table class="mt-2.5">
+                    <th>ID</th>
+                    <th>Sender</th>
+                    <th>Message</th>
+                    <th>Date</th>
+                        @foreach ($sentMessages as $message)
+                        <tr>
+                            <td>#{{$message->id}}</td>
+                            <td>{{$message->sender}}</td>
+                            <td><a href="/message/{{$message->id}}">{{substr($message->message, 0, 50) . '...'}}</a></td>
+                            <td>{{$message->created_at}}</td>
+                        </tr>
+                    @endforeach
                 </table>
             </div>
         </div>

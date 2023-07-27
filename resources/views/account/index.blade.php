@@ -17,7 +17,7 @@
                     {{ Session::get('message') }}
                 @endif
             </h2>
-            <h1>Welcome, {{ Auth::user()->name }}</h1>
+            <h1>Welcome, {{ Auth::user()->name }} ({{Auth::user()->email}})</h1>
             <h3>Choose a user to make chat...</h3>
 
             <form action="message" method="POST" class="mx-auto mt-16 max-w-xl sm:mt-20">

@@ -22,4 +22,5 @@ Route::get('account', [AccountController::class, 'index'])->name('account')->mid
 Route::post('account', [AccountController::class, 'store'])->name('accountPost');
 Route::post('message', [MessageController::class, 'store'])->name('messagePost')->middleware('auth');;
 Route::get('message', [MessageController::class, 'index'])->name('messages')->middleware('auth');;
+Route::get('message/{id}', [MessageController::class, 'detail'])->name('messageDetail')->middleware('auth');;
 Route::get('/', [HomeController::class, 'index'])->name('home');

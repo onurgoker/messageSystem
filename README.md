@@ -19,7 +19,9 @@ DB_HOST=localhost
 DB_PORT=3306 
 DB_DATABASE=/home/laravel-project/database/database.sqlite 
 
-For sqlite databases, you need to specify full path as above. Or skip this step and continue with the link below.
+For sqlite databases, you need to specify full path as above and place the sqlite file into root directory. 
+
+Or skip this step and continue with the link below :)
 
 ### Database configuration
 Check the following site for configuration: 
@@ -40,6 +42,11 @@ php artisan serve
 ``````
 
 Then check the 127.0.0.1:8000 on your browser!
+
+# Future Works
+Using blade template effectively
+Tailwind css
+Dockerizing the project
 
 # Author
 Onur GÖKER
