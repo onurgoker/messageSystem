@@ -59,7 +59,7 @@ npm run dev
 Then check the 127.0.0.1:8000 on your browser!
 
 # Future Works
-Using blade template effectively
+Using blade template layouts effectively (done)
 
 Tailwind css (done)
 
