@@ -6,12 +6,18 @@ The purpose of this project to demonstrate simple message system by using Larave
 You will need to install node package manager and composer in your system.
 
 # Instructions
+Clone the repository and execute the following command via console:
+
+``````
+composer install
+``````
+
 Set your default configurations in .env configuration file.
 
-DB_CONNECTION=sqlite
-DB_HOST=localhost
-DB_PORT=3306
-DB_DATABASE=/home/laravel-project/database/database.sqlite
+DB_CONNECTION=sqlite 
+DB_HOST=localhost 
+DB_PORT=3306 
+DB_DATABASE=/home/laravel-project/database/database.sqlite 
 
 For sqlite databases, you need to specify full path as above. Or skip this step and continue with the link below.
 
