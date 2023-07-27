@@ -63,6 +63,8 @@ Using blade template effectively
 
 Tailwind css (done)
 
+Design issues
+
 Dockerizing the project
 
 # Useful Sources
