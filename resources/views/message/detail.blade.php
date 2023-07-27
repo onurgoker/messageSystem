@@ -1,11 +1,11 @@
 <!doctype html>
-<html>
-    <head>
-        <title>Message System - Message Detail</title>
-        <meta content="text/html; charset=utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="../resources/css/output.css" rel="stylesheet">
-    </head>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Message System - Message Detail</title>
+            @vite('resources/css/app.css')
+        </head>
     <body>
         <div class="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
             <div class="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]" aria-hidden="true">
@@ -18,10 +18,10 @@
                 @endif
             </h2>
             <h1>Welcome, {{ Auth::user()->name }} ( {{Auth::user()->email}} )</h1>
-            <h3>My Messages</h3>
+            <h3>Message Detail</h3>
 
-            <h4>Sender: {{$message->sender}}</h4>
-            <h5>Message: {{$message->message}}</h5>
+            <h4><b>Sender:</b> {{$message->sender}}</h4>
+            <h5><b>Message:</b> {{$message->message}}</h5>
         </div>
     </body>
 </html>

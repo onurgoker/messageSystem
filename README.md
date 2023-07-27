@@ -3,7 +3,7 @@
 The purpose of this project to demonstrate simple message system by using Laravel PHP Framework.
 
 # Requirements
-You will need to install node package manager and composer in your system.
+You may need to install node package manager and composer in your system for laravel and / or tailwind css.
 
 # Instructions
 Clone the repository and execute the following command via console:
