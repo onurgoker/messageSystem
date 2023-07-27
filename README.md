@@ -50,7 +50,7 @@ Then check the 127.0.0.1:8000 on your browser!
 # Future Works
 Using blade template effectively
 
-Tailwind css
+Tailwind css (done)
 
 Dockerizing the project
 
