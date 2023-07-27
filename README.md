@@ -49,10 +49,11 @@ php artisan migrate
 ``````
 
 ### Project Execution
-Type the following command in your project root directory.
+Type the following commands concurrently in your project's root directory.
 
 ``````
 php artisan serve
+npm run dev
 ``````
 
 Then check the 127.0.0.1:8000 on your browser!
