@@ -19,11 +19,20 @@ class AccountController extends Controller
 
     public function auth(Request $request)
     {
+        try {
+        $request->validate([
+            'email' => ['required'],
+            'password' => ['required'],
+        ]);
+
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
             // Authentication passed...
             return redirect()->intended('account');
+        }
+        } catch (\InvalidArgumentException $ex) {
+            return redirect()->back()->with('error', $ex->getMessage());
         }
     }
 
@@ -31,11 +40,11 @@ class AccountController extends Controller
     public function store(Request $request)
     {
         try {
-            // $request->validate([
-                // 'firstName' => ['required', 'string', 'max:255'],
-            //     'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            //     'password' => ['required', 'string', 'confirmed'],
-            // ]);
+            $request->validate([
+                'firstName' => ['required', 'string', 'max:255'],
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+                'password' => ['required', 'string', 'min:6'],
+            ]);
 
             User::create([
                 'name' => $request->firstName . ' ' . $request->lastName,
@@ -49,7 +58,7 @@ class AccountController extends Controller
         return redirect()->back()->with('success','Registration completed');
     }
 
-    public function login() {
+    public function login(Request $request) {
         return view('account.login');
     }
 }

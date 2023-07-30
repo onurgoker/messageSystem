@@ -9,7 +9,14 @@
             <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                 Login
             </h2>
-            <form action="auth" method="POST" class="mx-auto mt-16 max-w-xl sm:mt-20">
+            <div class="mt-5 mx-auto max-w-2xl text-left">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li class="text-red-500">{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            <form action="auth" method="POST" class="mx-auto mt-2 max-w-xl sm:mt-2">
                 @csrf <!-- {{ csrf_field() }} -->
                 <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                     <div>
