@@ -11,10 +11,18 @@
                 {{ Session::get('message') }}
             @endif
         </h2>
-        <h1>Welcome, {{ Auth::user()->name }} ({{Auth::user()->email}})</h1>
-        <h3><a style="color:blue" href="/account">Write a new message</a></h3>
-        <h3>My Messages</h3>
-        <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+        <h1>Welcome, {{ Auth::user()->name }} ({{Auth::user()->email}})
+            @if(Auth::check())
+                <a style="color:blue" href="/logout">Logout</a>
+            @endif
+        </h1>
+
+        <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 text-left">
+        <a style="color:blue" href="/account">    
+            + Write a new message
+        </a>
+        </div>
+        <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 mx-auto mt-4 max-w-xl sm:mt-4">
             <h4>Received Messages</h4>
             <h4>Sent Messages</h4>
         </div>

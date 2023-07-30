@@ -63,7 +63,7 @@ Using blade template layouts effectively (done)
 
 Tailwind css (done)
 
-Design issues
+Design issues (done)
 
 Dockerizing the project
 

@@ -18,6 +18,7 @@ use App\Http\Controllers\MessageController;
 */
 Route::get('login', [AccountController::class, 'login'])->name('login');
 Route::post('auth', [AccountController::class, 'auth'])->name('auth');
+Route::get('logout', [AccountController::class, 'logout'])->name('auth');
 Route::get('account', [AccountController::class, 'index'])->name('account')->middleware('auth');
 Route::post('account', [AccountController::class, 'store'])->name('accountPost');
 Route::post('message', [MessageController::class, 'store'])->name('messagePost')->middleware('auth');;

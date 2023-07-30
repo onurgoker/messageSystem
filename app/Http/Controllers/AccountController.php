@@ -29,11 +29,17 @@ class AccountController extends Controller
 
         if (Auth::attempt($credentials)) {
             // Authentication passed...
-            return redirect()->intended('account');
+            return redirect()->intended('message');
         }
         } catch (\InvalidArgumentException $ex) {
             return redirect()->back()->with('error', $ex->getMessage());
         }
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->intended('login');
     }
 
 
